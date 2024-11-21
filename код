@@ -1,0 +1,23 @@
+#include <iostream>
+#include <Windows.h>
+#include <regex>
+using namespace std;
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	string Number = "10 20 30";
+	regex shablonn("[0-1]");
+	smatch resulT;
+	if (regex_search(Number, resulT,shablonn)) {
+		cout << "Результат виводу з шаблона:" << resulT[0] << endl;
+	}
+	
+	string gmail = " Gmail at 1Artemboss@gmail.com.";
+	regex email_shablon("[1][A-Z][a-z]+@[a-z]+\\.[a-z]{2,3}");
+	smatch result;
+	if (regex_search(gmail, result, email_shablon)) {
+		cout << "Знайдено емаіл відповідно шаблону:" << result[0] << endl;
+	}
+}
+
+
